@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Aggregator - Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                YouTube Channel Aggregator
+            </h1>
+            <p class="text-gray-600">
+                Collect and summarize videos from your favorite YouTube channels
+            </p>
+        </header>
+
+        <div class="mb-6 flex flex-wrap gap-4 items-center">
+            <div class="flex gap-2 bg-white rounded-lg p-1 shadow">
+                <button class="px-6 py-2 rounded-md bg-blue-600 text-white font-medium">
+                    Channels (3)
+                </button>
+                <button class="px-6 py-2 rounded-md text-gray-600 hover:bg-gray-100 font-medium">
+                    Videos (15)
+                </button>
+            </div>
+            <button class="ml-auto px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium shadow">
+                Fetch Latest Videos
+            </button>
+        </div>
+
+        <!-- Add Channel Form -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Add YouTube Channel</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Channel Name</label>
+                    <input type="text" placeholder="e.g., Tech Channel" 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Channel URL or ID</label>
+                    <input type="text" placeholder="e.g., https://youtube.com/@channelname or UC..." 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-medium">
+                    Add Channel
+                </button>
+            </div>
+        </div>
+
+        <!-- Channel List -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Your Channels</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Channel Card 1 -->
+                <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">Tech Reviews Channel</h3>
+                            <p class="text-sm text-gray-600 mb-2">ID: UCxxxxxxxxxxxxxxxxxx</p>
+                            <p class="text-xs text-gray-500">Added: Oct 27, 2025</p>
+                        </div>
+                        <button class="ml-2 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Channel Card 2 -->
+                <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">Podcast Channel</h3>
+                            <p class="text-sm text-gray-600 mb-2">ID: UCyyyyyyyyyyyyyyyyyy</p>
+                            <p class="text-xs text-gray-500">Added: Oct 26, 2025</p>
+                        </div>
+                        <button class="ml-2 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Channel Card 3 -->
+                <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">News & Analysis</h3>
+                            <p class="text-sm text-gray-600 mb-2">ID: UCzzzzzzzzzzzzzzzzzz</p>
+                            <p class="text-xs text-gray-500">Added: Oct 25, 2025</p>
+                        </div>
+                        <button class="ml-2 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Example (Hidden by default, shown when Videos tab is active) -->
+        <div class="mt-8 hidden">
+            <h2 class="text-2xl font-bold mb-4">Latest Videos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="aspect-video bg-gray-200 relative">
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+                            Today
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-2">
+                            <span class="text-xs font-semibold text-blue-600">Tech Reviews Channel</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Latest Tech Review Video</h3>
+                        <p class="text-sm text-gray-600 mb-3">Sample video description...</p>
+                        <button class="text-sm text-blue-600 hover:underline mb-3">
+                            Show Summary & Insights
+                        </button>
+                        <a href="#" class="inline-block mt-3 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+                            Watch on YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-4 right-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg">
+        <p class="font-semibold">✅ Project Ready!</p>
+        <p class="text-sm">Run: npm run dev</p>
+    </div>
+</body>
+</html>
